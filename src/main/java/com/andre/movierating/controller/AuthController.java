@@ -1,6 +1,8 @@
 package com.andre.movierating.controller;
 
-import com.andre.movierating.domain.dto.*;
+import com.andre.movierating.domain.dto.request.LoginRequestDTO;
+import com.andre.movierating.domain.dto.request.RegisterRequestDTO;
+import com.andre.movierating.domain.dto.response.AuthResponseDTO;
 import com.andre.movierating.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -13,12 +15,12 @@ public class AuthController {
     private final AuthService authService;
 
     @PostMapping("/register")
-    public AuthResponse register(@RequestBody RegisterRequest request) {
+    public AuthResponseDTO register(@RequestBody RegisterRequestDTO request) {
         return authService.register(request);
     }
 
     @PostMapping("/login")
-    public AuthResponse login(@RequestBody LoginRequest request) {
+    public AuthResponseDTO login(@RequestBody LoginRequestDTO request) {
         return authService.login(request);
     }
 }

@@ -1,6 +1,6 @@
 package com.andre.movierating.controller;
 
-import com.andre.movierating.domain.dto.MovieResponseDTO;
+import com.andre.movierating.domain.dto.response.MovieResponseDTO;
 import com.andre.movierating.service.MovieService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;

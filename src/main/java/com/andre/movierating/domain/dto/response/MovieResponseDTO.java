@@ -1,4 +1,4 @@
-package com.andre.movierating.domain.dto;
+package com.andre.movierating.domain.dto.response;
 
 import lombok.Builder;
 import lombok.Data;

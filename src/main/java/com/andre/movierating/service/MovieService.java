@@ -1,7 +1,7 @@
 package com.andre.movierating.service;
 
-import com.andre.movierating.domain.dto.MovieResponseDTO;
-import com.andre.movierating.domain.dto.OmdbResponse;
+import com.andre.movierating.domain.dto.response.MovieResponseDTO;
+import com.andre.movierating.external.omdb.OmdbResponse;
 import com.andre.movierating.domain.model.Movie;
 import com.andre.movierating.repository.MovieRepository;
 import lombok.RequiredArgsConstructor;

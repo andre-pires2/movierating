@@ -1,4 +1,4 @@
-package com.andre.movierating.domain.dto;
+package com.andre.movierating.external.omdb;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;

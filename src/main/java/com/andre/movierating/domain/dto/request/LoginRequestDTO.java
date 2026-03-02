@@ -1,9 +1,9 @@
-package com.andre.movierating.domain.dto;
+package com.andre.movierating.domain.dto.request;
 
 import lombok.Data;
 
 @Data
-public class LoginRequest {
+public class LoginRequestDTO {
     private String username;
     private String password;
 }

@@ -1,6 +1,8 @@
 package com.andre.movierating.service;
 
-import com.andre.movierating.domain.dto.*;
+import com.andre.movierating.domain.dto.request.LoginRequestDTO;
+import com.andre.movierating.domain.dto.request.RegisterRequestDTO;
+import com.andre.movierating.domain.dto.response.AuthResponseDTO;
 import com.andre.movierating.domain.model.User;
 import com.andre.movierating.repository.UserRepository;
 import com.andre.movierating.security.JwtService;
@@ -18,7 +20,7 @@ public class AuthService {
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
 
-    public AuthResponse register(RegisterRequest request) {
+    public AuthResponseDTO register(RegisterRequestDTO request) {
 
         User user = User.builder()
                 .username(request.getUsername())
@@ -30,12 +32,12 @@ public class AuthService {
 
         String token = jwtService.generateToken(user.getUsername());
 
-        return AuthResponse.builder()
+        return AuthResponseDTO.builder()
                 .token(token)
                 .build();
     }
 
-    public AuthResponse login(LoginRequest request) {
+    public AuthResponseDTO login(LoginRequestDTO request) {
 
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
@@ -46,7 +48,7 @@ public class AuthService {
 
         String token = jwtService.generateToken(request.getUsername());
 
-        return AuthResponse.builder()
+        return AuthResponseDTO.builder()
                 .token(token)
                 .build();
     }

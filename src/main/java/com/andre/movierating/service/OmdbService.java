@@ -1,6 +1,6 @@
 package com.andre.movierating.service;
 
-import com.andre.movierating.domain.dto.OmdbResponse;
+import com.andre.movierating.external.omdb.OmdbResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
