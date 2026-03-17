@@ -2,6 +2,7 @@ package com.andre.movierating.domain.model;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -13,6 +14,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Document(collection = "user_movies")
+@CompoundIndex(name = "user_movie_unique", def = "{'userId': 1, 'imdbId': 1}", unique = true)
 public class UserMovie {
 
     @Id
@@ -22,7 +24,7 @@ public class UserMovie {
     private String userId;
 
     @Indexed
-    private String movieId;
+    private String imdbId;
 
     private Double personalRating;
 

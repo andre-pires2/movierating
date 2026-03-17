@@ -17,18 +17,14 @@ public class AuthController {
     private final AuthService authService;
 
     @PostMapping("/register")
-    public ResponseEntity<AuthResponseDTO> register(
+    public AuthResponseDTO register(
             @Valid @RequestBody RegisterRequestDTO request) {
-
-        AuthResponseDTO response = authService.register(request);
-        return ResponseEntity.ok(response);
+        return authService.register(request);
     }
 
     @PostMapping("/login")
-    public ResponseEntity<AuthResponseDTO> login(
+    public AuthResponseDTO login(
             @Valid @RequestBody LoginRequestDTO request) {
-
-        AuthResponseDTO response = authService.login(request);
-        return ResponseEntity.ok(response);
+        return authService.login(request);
     }
 }
